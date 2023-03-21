@@ -9,22 +9,48 @@ const displayCountries = countries => {
     console.log(countries[0]);
 
     const countriesHTML = countries.map (country => getCountriesHTML(country));
-    console.log(countriesHTML[0]);
+    // console.log(countriesHTML[0]);
 
     const countriesContainer = document.getElementById("countries");
     countriesContainer.innerHTML = countriesHTML.join(" ");
 }
 
 
-const getCountriesHTML = country => {
+
+// Originul
+// const getCountriesHTML = country => {
+//     return `
+//     <div class="country">
+//         <h3>Official Name: ${country.name.official}</h3>
+//         <img src="${country.flags.png}">
+//     </div>
+//     `;
+// }
+
+// option one
+
+// const getCountriesHTML = country => {
+//     // destructuring system
+//     // option: 01
+//     const {name, flags} = country;
+//     return `
+//     <div class="country">
+//         <h3>Official Name: ${name.official}</h3>
+//         <img src="${flags.png}">
+//     </div>
+//     `;
+// }
+
+
+// Otption two
+const getCountriesHTML = ({name, flags}) => {
     return `
     <div class="country">
-        <h3>Official Name: ${country.name.official}</h3>
-        <img src="${country.flags.png}">
+        <h3>Official Name: ${name.official}</h3>
+        <img src="${flags.png}">
     </div>
     `;
 }
-
 
 
 loadCountries();
