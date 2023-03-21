@@ -43,10 +43,12 @@ const displayCountries = countries => {
 
 
 // Otption two
-const getCountriesHTML = ({name, flags}) => {
+const getCountriesHTML = ({name, flags, independent, region}) => {
     return `
     <div class="country">
         <h3>Official Name: ${name.official}</h3>
+        <p>Independent: ${independent}</p>
+        <p>Region: ${region}</p>
         <img src="${flags.png}">
     </div>
     `;
